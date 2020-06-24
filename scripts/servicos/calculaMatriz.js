@@ -1,9 +1,9 @@
-function calculaMatriz(tamanhoX, tamanhoY, qtdSprites) {
+function calculaMatriz(tamanhoX, tamanhoY, qtdColunas, qtdLinhas) {
   const matriz = []
 
-  for (let j = 0; j <= tamanhoY; j += (tamanhoY / (Math.sqrt(qtdSprites) - 1))) {
-    for (let i = 0; i <= tamanhoX; i += (tamanhoX / (Math.sqrt(qtdSprites) -1 ))) {
-      const linha = [i, j]
+  for (let y = 0; y < tamanhoY; y += (tamanhoY / qtdLinhas)) {
+    for (let x = 0; x < tamanhoX; x += (tamanhoX / qtdColunas)) {
+      const linha = [parseInt(x), parseInt(y)]
       matriz.push(linha)
     }
   }
