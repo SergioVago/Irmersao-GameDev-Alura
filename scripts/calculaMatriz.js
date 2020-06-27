@@ -8,6 +8,5 @@ function calculaMatriz(tamanhoX, tamanhoY, qtdColunas, qtdLinhas) {
     }
   }
 
-  console.log('matriz :>> ', matriz);
   return matriz
 }

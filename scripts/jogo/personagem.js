@@ -3,6 +3,7 @@ class Personagem extends Animacao {
     matriz,
     imagem,
     x,
+    variacaoY,
     largura,
     altura,
     larguraSprite,
@@ -12,23 +13,23 @@ class Personagem extends Animacao {
       matriz,
       imagem,
       x,
+      variacaoY,
       largura,
       altura,
       larguraSprite,
       alturaSprite,
     )
 
-    this.yInicial = height - this.altura
-    this.y = this.yInicial
-
     this.velocidadeDoPulo = 0
     this.gravide = 3
+    this.alturaDoPulo = -30
     this.pulos = 0
   }
 
-  pula() {
-    if(++this.pulos <= 2) {
-      this.velocidadeDoPulo = -30
+  pula(somPulo) {
+    if (++this.pulos <= 2) {
+      this.velocidadeDoPulo = this.alturaDoPulo
+      somPulo.play()
     }
   }
 
@@ -50,11 +51,11 @@ class Personagem extends Animacao {
       this.x,
       this.y,
       this.largura * precisao,
-      this.altura,
+      this.altura * precisao,
       inimigo.x,
       inimigo.y,
       inimigo.largura * precisao,
-      inimigo.altura,
+      inimigo.altura * precisao,
     )
 
     return colisao

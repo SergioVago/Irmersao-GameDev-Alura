@@ -1,13 +1,17 @@
 class Animacao {
-  constructor(matriz, imagem, x, largura, altura, larguraSprite, alturaSprite) {
+  constructor(matriz, imagem, x, variacaoY, largura, altura, larguraSprite, alturaSprite) {
     this.matriz = matriz
     this.imagem = imagem
     this.x = x
+    this.variacaoY = variacaoY
     this.y = height - altura
     this.largura = largura
     this.altura = altura
     this.larguraSprite = larguraSprite
     this.alturaSprite = alturaSprite
+
+    this.yInicial = height - this.altura - variacaoY
+    this.y = this.yInicial
     
     this.frameAtual = 0
   }
@@ -35,7 +39,9 @@ class Animacao {
   moveX(velocidade) {
     this.x -= velocidade
 
-    if(this.x < -this.largura) this.x = width 
+    if(this.x < -this.largura - this.delay) {
+      this.x = width
+    }
   }
 
   moveY(altura) {
