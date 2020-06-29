@@ -5,6 +5,7 @@ let imagemInimigoGrande
 let imagemInimigoVoador
 let imagemGameOver
 let imagemTelaInicial
+let imagemVida
 
 let fonteTelaInicial
 
@@ -19,11 +20,14 @@ let inimigo
 let inimigoGrande
 let inimigoVoador
 
-let cenaAtual = 'telaInicial'
+let cenaAtual = 'jogo'
 let cenas
 let telaInicial
 let jogo
 let botaoGerenciador
+
+let vida
+let fita
 
 const matrizPersonagem = calculaMatriz(880, 1080, 4, 4)
 const matrizInimigo = calculaMatriz(420, 728, 4, 7)

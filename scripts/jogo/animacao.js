@@ -38,13 +38,13 @@ class Animacao {
 
   moveX(velocidade) {
     this.x -= velocidade
-
-    if(this.x < -this.largura - this.delay) {
-      this.x = width
-    }
   }
 
   moveY(altura) {
     this.y += altura
+  }
+
+  aparece() {
+    this.x = width
   }
 }
